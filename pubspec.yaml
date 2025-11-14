@@ -1,0 +1,38 @@
+name: uas_kasku
+description: "Aplikasi uang kas sederhana untuk tugas kuliah menggunakan Flutter."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.9.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # UI icons
+  cupertino_icons: ^1.0.8
+
+  # HTTP request (untuk login simulasi)
+  http: ^1.2.2
+
+  # Menyimpan data lokal (auth dan transaksi)
+  shared_preferences: ^2.3.3
+
+  # Membuat ID unik untuk transaksi
+  uuid: ^4.5.1
+
+  # Format tanggal dan angka
+  intl: ^0.19.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+
+  # assets:
+  #   - assets/
