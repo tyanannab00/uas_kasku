@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import '../models/saving_category.dart';
+import '../utils/format.dart';
+// import 'package:intl/intl.dart';
 
 class SavingCard extends StatelessWidget {
   final SavingCategory category;
@@ -51,7 +53,7 @@ class SavingCard extends StatelessWidget {
                   ),
                   const SizedBox(height: 6),
                   Text(
-                    "Saldo: Rp ${category.balance.toString()}",
+                    'Saldo: ${formatRupiah(category.balance)}',
                     style: TextStyle(
                       fontSize: 16,
                       color: category.color,

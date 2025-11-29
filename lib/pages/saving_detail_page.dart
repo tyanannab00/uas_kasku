@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../models/saving_category.dart';
+import '../utils/format.dart';
 
 class SavingDetailPage extends StatefulWidget {
   final SavingCategory category;
@@ -104,9 +105,7 @@ class _SavingDetailPageState extends State<SavingDetailPage> {
     );
   }
 
-  String formatRupiah(int value) {
-    return "Rp ${value.toString()}";
-  }
+  // use shared formatRupiah from utils/format.dart
 
   @override
   Widget build(BuildContext context) {
@@ -130,20 +129,26 @@ class _SavingDetailPageState extends State<SavingDetailPage> {
       floatingActionButton: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          FloatingActionButton.extended(
-            heroTag: "add",
-            backgroundColor: Colors.green,
-            icon: const Icon(Icons.add),
-            label: const Text("Tambah"),
-            onPressed: () => _addAmount(true),
+          SizedBox(
+            width: 150,
+            child: FloatingActionButton.extended(
+              heroTag: 'add',
+              backgroundColor: Colors.green,
+              icon: const Icon(Icons.add),
+              label: const Text('Tambah'),
+              onPressed: () => _addAmount(true),
+            ),
           ),
           const SizedBox(height: 12),
-          FloatingActionButton.extended(
-            heroTag: "withdraw",
-            backgroundColor: Colors.red,
-            icon: const Icon(Icons.remove),
-            label: const Text("Tarik"),
-            onPressed: () => _addAmount(false),
+          SizedBox(
+            width: 150,
+            child: FloatingActionButton.extended(
+              heroTag: 'withdraw',
+              backgroundColor: Colors.red,
+              icon: const Icon(Icons.remove),
+              label: const Text('Tarik'),
+              onPressed: () => _addAmount(false),
+            ),
           ),
         ],
       ),
@@ -179,8 +184,6 @@ class _SavingDetailPageState extends State<SavingDetailPage> {
           ),
 
           const SizedBox(height: 25),
-
-          // ------------------ PROGRESS TARGET -------------------
           const Text(
             "Progress Target",
             style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
@@ -224,7 +227,6 @@ class _SavingDetailPageState extends State<SavingDetailPage> {
 
           const SizedBox(height: 30),
 
-          // ------------------ RIWAYAT -------------------
           const Text(
             "Riwayat Transaksi",
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),

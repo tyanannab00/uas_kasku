@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+// import '../utils/format.dart';
 import '../models/saving_category.dart';
 import '../widgets/saving_card.dart';
 import 'saving_detail_page.dart';
@@ -107,9 +108,7 @@ class _DashboardPageState extends State<DashboardPage> {
     );
   }
 
-  String formatRupiah(int value) {
-    return "Rp ${value.toString()}";
-  }
+  // use shared formatRupiah from utils/format.dart
 
   @override
   Widget build(BuildContext context) {
